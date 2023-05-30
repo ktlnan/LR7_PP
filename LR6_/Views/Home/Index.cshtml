@@ -1,0 +1,110 @@
+﻿@{
+    ViewData["Title"] = "Вход";
+    Layout = null;
+}
+
+<html>
+<head>
+    <title>Магазин смартфонов</title>
+    <style>
+        body {
+            background-color: #f2f2f2;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        fieldset {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.3);
+            margin: 50px auto;
+            padding: 20px;
+            width: 80%;
+            max-width: 800px;
+            border: none;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 36px;
+            margin: 0 0 20px;
+            text-align: center;
+        }
+
+        h3 {
+            color: #333;
+            font-size: 24px;
+            margin: 20px 0 10px;
+        }
+
+        input[type="text"], input[type="password"] {
+            background-color: #f2f2f2;
+            border: none;
+            border-radius: 5px;
+            color: #333;
+            font-size: 18px;
+            margin: 10px 0;
+            padding: 10px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #333;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            cursor: pointer;
+            font-size: 18px;
+            margin: 10px 0;
+            padding: 10px;
+            transition: background-color 0.3s ease;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+            input[type="submit"]:hover {
+                background-color: #666;
+            }
+
+        .btn {
+            background-color: #333;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            cursor: pointer;
+            display: inline-block;
+            font-size: 18px;
+            margin: 10px;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+            .btn:hover {
+                background-color: #666;
+            }
+    </style>
+    </style>
+</head>
+<body>
+    <fieldset>
+        <h1>Вход</h1>
+        <form method="post">
+            <h3>Номер телефона</h3>
+            <input type="text" maxlength="11" name="Phone" />
+            <h3>Пароль</h3>
+            <input type="password" name="Parol" />
+            <input type="submit" value="Войти" /><br /> 
+        </form>
+        @if (!string.IsNullOrEmpty(ViewBag.Message1))
+        {
+            <script>alert('@Html.Raw(ViewBag.Message1)');</script>
+        }
+        <a href="~/Home/ListT" class="btn">Товары</a>
+        <a href="~/Home/Registr" class="btn">Регистрация</a>
+    </fieldset>
+</body>
+</html>
